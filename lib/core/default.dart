@@ -2,6 +2,8 @@
 import 'package:flutter/cupertino.dart';
 
 class Palet {
+  String API= "https://jsonplaceholder.typicode.com/users";
+
   Color backgroundColor = const Color.fromRGBO(189, 159, 233, 1);
   Color barColor = const Color.fromRGBO(123, 63, 211, 1);
   Color buttonColor = const Color.fromRGBO(90, 15, 200, 1);
