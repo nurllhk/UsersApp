@@ -14,6 +14,7 @@ class DataService {
       List<User> users = [];
       for (var userJson in jsonData) {
         users.add(User.fromJson(userJson));
+
       }
       return users;
     } else {
