@@ -7,9 +7,9 @@ import '../widget/title_detail.dart';
 class UserProfile extends StatelessWidget {
   final int index;
   final List userList;
-  final Palet ui;
 
-  const UserProfile(this.index, this.userList, this.ui, {super.key});
+
+  const UserProfile(this.index, this.userList, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class UserProfile extends StatelessWidget {
         child: SingleChildScrollView(
           child: Container(
             decoration:
-                BoxDecoration(borderRadius: ui.radius, color: Colors.white),
+                BoxDecoration(borderRadius: Palet.radius, color: Colors.white),
             child: Column(
               children: [
                 Stack(
@@ -30,9 +30,9 @@ class UserProfile extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 60),
                       child: Container(
                         height: MediaQuery.of(context).size.height / 2.9,
-                        decoration: BoxDecoration(
-                            color: ui.profileColor,
-                            borderRadius: ui.profileRadius),
+                        decoration: const BoxDecoration(
+                            color: Palet.profileColor,
+                            borderRadius: Palet.profileRadius),
                       ),
                     ),
                     const Positioned(
@@ -42,20 +42,20 @@ class UserProfile extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.bottomCenter,
                         child: CircleAvatar(
-                          backgroundImage: AssetImage('images/profile.png'),
+                          backgroundImage: AssetImage(DefaultKey.profilphoto),
                           radius: 60,
                         ),
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                         bottom: 10,
                         left: 80,
                         right: 0,
                         child: Align(
                           child: CircleAvatar(
                               radius: 15,
-                              backgroundColor: ui.buttonColor,
-                              child: const Icon(
+                              backgroundColor: Palet.buttonColor,
+                              child:  Icon(
                                 Icons.add,
                                 color: Colors.white,
                               )),
@@ -70,19 +70,19 @@ class UserProfile extends StatelessWidget {
                         RichDetail(
                           userList: userList,
                           index: index,
-                          text: 'Username: ',
+                          text: DefaultKey.username,
                           indexname: userList[index].username,
                         ),
                         RichDetail(
                           userList: userList,
                           index: index,
-                          text: 'Full Name: ',
+                          text: DefaultKey.fullname,
                           indexname: userList[index].name,
                         ),
                         RichDetail(
                           userList: userList,
                           index: index,
-                          text: 'Website: ',
+                          text: DefaultKey.email,
                           indexname: userList[index].website,
                         ),
                       ],
@@ -102,15 +102,15 @@ class UserProfile extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Company',
-                                  style: ui.textStyle,
+                                const Text(
+                                  DefaultKey.company,
+                                  style: Palet.textStyle,
                                 ),
                                 Text(userList[index].company.name),
                                 TitleDetail(
                                   userList: userList,
                                   index: index,
-                                  text: 'Catch Phrase: ',
+                                  text: DefaultKey.catchphrase,
                                   indexname:
                                       userList[index].company.catchPhrase,
                                 ),
@@ -126,26 +126,26 @@ class UserProfile extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  'Contact',
-                                  style: ui.textStyle,
+                                const Text(
+                                  DefaultKey.contact,
+                                  style: Palet.textStyle,
                                 ),
                                 TitleDetail(
                                   userList: userList,
                                   index: index,
-                                  text: 'Phone: ',
+                                  text: DefaultKey.phone,
                                   indexname: userList[index].phone,
                                 ),
                                 TitleDetail(
                                   userList: userList,
                                   index: index,
-                                  text: 'Email: ',
+                                  text: DefaultKey.email,
                                   indexname: userList[index].email,
                                 ),
                                 TitleDetail(
                                   userList: userList,
                                   index: index,
-                                  text: 'Adress: ',
+                                  text: DefaultKey.adress,
                                   indexname: '${adres.street},'
                                       '${adres.suite},'
                                       '${adres.city},'

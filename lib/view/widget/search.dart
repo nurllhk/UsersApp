@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:users/core/default.dart';
+
 class SearchTop extends StatelessWidget {
   const SearchTop({
     super.key,
-    required this.ui,
   });
-
-  final Palet ui;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height / 6,
       decoration:
-      BoxDecoration(color: ui.barColor, borderRadius: ui.radius),
+          BoxDecoration(color: Palet.barColor, borderRadius: Palet.radius),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const Padding(
             padding: EdgeInsets.all(10),
             child: Text(
-              'USERS',
+              DefaultKey.appname,
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -32,7 +30,7 @@ class SearchTop extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.symmetric(vertical: 10),
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: ui.radius),
+                  color: Colors.white, borderRadius: Palet.radius),
               child: const Row(
                 children: [
                   Padding(
@@ -40,7 +38,7 @@ class SearchTop extends StatelessWidget {
                     child: Icon(Icons.search),
                   ),
                   Text(
-                    'Search',
+                    DefaultKey.search,
                     style: TextStyle(color: Colors.grey),
                   )
                 ],

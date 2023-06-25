@@ -1,10 +1,11 @@
 import 'dart:convert';
-
 import '../modal/user_modal.dart';
 import 'package:http/http.dart' as http;
 
 class DataService {
   final String Url = "https://jsonplaceholder.typicode.com/users";
+
+  // Genel bir API olduğu için .env atanmamıştır.
 
   Future<List> userDownload() async {
     final response = await http.get(Uri.parse(Url));

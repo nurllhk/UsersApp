@@ -6,11 +6,9 @@ class UserListReque extends StatelessWidget {
   const UserListReque({
     super.key,
     required this.userList,
-    required this.ui,
   });
 
   final List userList;
-  final Palet ui;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class UserListReque extends StatelessWidget {
           return InkWell(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                return UserProfile(index,userList,ui);
+                return UserProfile(index, userList);
               }));
             },
             child: SizedBox(
@@ -33,7 +31,7 @@ class UserListReque extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 15),
                         child: CircleAvatar(
-                          backgroundImage: AssetImage('images/profile.png'),
+                          backgroundImage: AssetImage(DefaultKey.profilphoto),
                         ),
                       ),
                       Column(
@@ -42,7 +40,7 @@ class UserListReque extends StatelessWidget {
                           Center(
                               child: Text(
                             userList[index].name,
-                            style: ui.textStyle,
+                            style: Palet.textStyle,
                           )),
                           Text(
                             userList[index].company.bs,
@@ -57,8 +55,8 @@ class UserListReque extends StatelessWidget {
                           width: 21,
                           height: 21,
                           decoration: BoxDecoration(
-                              color: ui.buttonColor,
-                              borderRadius: ui.radiusButton),
+                              color: Palet.buttonColor,
+                              borderRadius: Palet.radiusButton),
                           child: Center(
                             child: Text(
                               userList[index].id.toString(),
@@ -75,7 +73,7 @@ class UserListReque extends StatelessWidget {
                     child: Container(
                       height: 1.0,
                       width: MediaQuery.of(context).size.width / 1.3,
-                      color: ui.barColor,
+                      color: Palet.barColor,
                     ),
                   )
                 ],
